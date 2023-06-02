@@ -1,0 +1,18 @@
+workflows:
+  main:
+    name: Main Workflow
+    on:
+      push:
+        branches:
+          - master
+    environment:
+      node: latest
+      react: latest
+    scripts:
+      - name: Install Dependencies
+        script: npm ci
+      - name: Build Android APK
+        script: |
+          npx react-native run-android --variant=release
+    artifacts:
+      - android/app/build/outputs/apk/release/*.apk
