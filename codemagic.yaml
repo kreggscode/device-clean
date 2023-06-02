@@ -1,10 +1,6 @@
 workflows:
   main:
     name: Main Workflow
-    on:
-      push:
-        branches:
-          - master
     environment:
       node: latest
       react: latest
