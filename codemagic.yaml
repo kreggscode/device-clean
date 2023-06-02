@@ -1,10 +1,11 @@
 workflows:
   main:
     name: Main Workflow
-    environment:
-      node: latest
-      react: latest
     scripts:
+      - name: Install Node.js
+        script: nvm install
+      - name: Use Node.js
+        script: nvm use
       - name: Install Dependencies
         script: npm ci
       - name: Build Android APK
